@@ -12,104 +12,111 @@ class ViewController: UIViewController {
     // les IBOutlet permettront au contrôleur de changer des éléments de la vue
     @IBOutlet weak var swipeView: UIStackView! // pour le faire bouger quand on va swiper pour partager
 
-    @IBOutlet weak var layout1Button: UIButton!     // on pourra lui ajouter ou enlever l'image Selected quand on appuie dessus
-    @IBOutlet weak var layout2Button: UIButton!     // on pourra lui ajouter ou enlever l'image Selected quand on appuie dessus
-    @IBOutlet weak var layout3Button: UIButton! // on pourra lui ajouter ou enlever l'image Selected quand on appuie dessus
-    @IBOutlet weak var layoutStackView: UIStackView!
+    @IBOutlet var layoutButtons: [UIButton]!
 
+    @IBOutlet var imageButton: [UIButton]!
 
-    @IBOutlet weak var topLeftButton: UIButton! // on pourra lui ajouter ou enlever l'image choisie quand on appuie dessus
-
-    @IBOutlet weak var topRightButton: UIButton!    // on pourra lui ajouter ou enlever l'image choisie quand on appuie dessus
-    @IBOutlet weak var subLeftButton: UIButton!    // on pourra lui ajouter ou enlever l'image choisie quand on appuie dessus
-    @IBOutlet weak var subRightButton: UIButton!    // on pourra lui ajouter ou enlever l'image choisie quand on appuie dessus
-
-    @IBOutlet weak var photoView: UIView!       // Va bouger lors du swipe de partage ? Changement de couleur de fond... pour améliorations éventuelles
+    @IBOutlet weak var switchButton: UIButton!
+    
+    @IBOutlet weak var photoView: UIView!       // Va bouger lors du swipe de partage(animation) ? Changement de couleur de fond... pour améliorations éventuelles
+    var touchedButton: UIButton!
+    var myImageView: UIImage!
+    private let myImagePickerController = UIImagePickerController()
+    var indexOfColor = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        buttonIsPresent(button: imageButton[1]) // valide la disposition de départ
+        buttonIsNotPresent(button: imageButton[3])
+
     }// End of override func viewDidLoad
 
+    @IBAction func switchColorView(_ sender: Any) {
+        let colors: [UIColor] = [#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1),#colorLiteral(red: 0.5910229683, green: 0.3601167798, blue: 0, alpha: 1),#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1),#colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1),#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1),#colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1),#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1),#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),#colorLiteral(red: 0.1315900385, green: 0.3851100206, blue: 0.567650497, alpha: 1)]
+        photoView.backgroundColor = colors[indexOfColor]
+        indexOfColor += 1
+        print(indexOfColor)
+        if indexOfColor == 9 {
+            indexOfColor = 0
+        }
+    }
 
     // -------- IBAction du swipe to share ---------
 
 
 
     // -------- IBAction des boutons de changement de disposition -------
-    @IBAction func layout1ButtonTouched(_ sender: Any) {
-        // buttonTopRight doit etre caché et désactivé
-        buttonIsNotPresent(button: topRightButton)
-        // buttonSubRight doit etre affiché et activé
-        buttonIsPresent(button: subRightButton)
-        //layout1Button doit avoir l'image Selected
-        layout1Button.setImage(UIImage(named: "Selected"), for: UIControl.State.normal)
-        // layout2(et 3)Button ne doivent plus avoir d'image
-        removeButtonImage(button: layout2Button, button2: layout3Button)
-    }// End of func layout1ButtonTouched
 
-    @IBAction func layout2ButtonTouched(_ sender: Any) {
-        // buttonTopRight doit etre affiché et activé
-        buttonIsPresent(button: topRightButton)
-        // buttonSubRight doit etre caché et désactivé
-        buttonIsNotPresent(button: subRightButton)
-        //layout2Button doit avoir l'image Selected
-        layout2Button.setImage(UIImage(named: "Selected"), for: UIControl.State.normal)
-        // layout1(et 3)Button ne doivent plus avoir d'image
-        removeButtonImage(button: layout1Button, button2: layout3Button)
-    }// End of func layout2ButtonTouched
 
-    @IBAction func layout3ButtonTouched(_ sender: Any) {
-        // buttonTopRight doit etre affiché et activé
-        buttonIsPresent(button: topRightButton)
-        // buttonSubRight doit etre affiché et activé
-        buttonIsPresent(button: subRightButton)
-        //layout3Button doit avoir l'image Selected
-        layout3Button.setImage(UIImage(named: "Selected"), for: UIControl.State.normal)
-        // layout2(et 1)Button ne doivent plus avoir d'image
-        removeButtonImage(button: layout2Button, button2: layout1Button)
-    }// End of func layout3ButtonTouched
+    @IBAction func layoutTouched(_ sender: UIButton) {
+        layoutButtonTouched(buttonTouched: sender)
+    }// End of func layoutTouched
 
+    /// Suivant le bouton touché, ajoute l'image Selected et change la disposition des photos
+    func layoutButtonTouched(buttonTouched: UIButton) {
+        for butt in layoutButtons {
+            self.removeButtonImage(button: butt)
+        }
+        buttonTouched.setImage(UIImage(named: "Selected"), for: UIControl.State.normal)
+        for imagebutt in imageButton {
+            buttonIsPresent(button: imagebutt)
+        }
+        if buttonTouched.tag == 1 {
+            buttonIsNotPresent(button: imageButton[1])
+        }
+        if buttonTouched.tag == 2 {
+            buttonIsNotPresent(button: imageButton[3])
+        }
+    } // End of layoutButtonTouched
+
+    /// affiche et active le bouton
     func buttonIsPresent(button: UIButton) {
         button.isHidden = false // le bouton n'est pas caché
         button.isEnabled = true // le bouton est activé
     } // End of func buttonIsPresent
 
+    /// cache et désactive le bouton
     func buttonIsNotPresent(button: UIButton) {
         button.isHidden = true // le bouton est caché
         button.isEnabled = false // le bouton n'est pas activé
     } // End of func buttonIsNotPresent
 
-    func removeButtonImage(button : UIButton, button2: UIButton) {
+    /// supprime l'image du bouton mis en paramètre.
+    func removeButtonImage(button : UIButton) {
         button.setImage(nil, for: UIControl.State.normal)
-        button2.setImage(nil, for: UIControl.State.normal)
     } // End of func removeButtonImage
 
+
     //-------- IBAction des boutons de la vue Photo : -----------
-    //    pour éviter répétition : En faire 1 seule avec un paramètre bouton touché qui serait sur la mainStackView? possible ? A VOIR !!
 
-    @IBAction func buttonTopLeftTouched(_ sender: Any) {
-        // actions déclenchées par l'appui sur ce bouton : A définir ...
+    @IBAction func imageButtonTouched(_ sender: UIButton) {
+        touchedButton = sender
+        openPhotoLibrary()
+    } // End of imageButtonTouched
 
-    }// End of func buttonTopLeftTouched
+    func openPhotoLibrary() {
+        print("tapGesture on Image View")
+        myImagePickerController.sourceType = .photoLibrary
+        myImagePickerController.allowsEditing = true
+        myImagePickerController.delegate = self
+        present(myImagePickerController, animated: true)
+    } // func openGallary(){
 
-    @IBAction func buttonTopRightTouched(_ sender: Any) {
-        // actions déclenchées par l'appui sur ce bouton : A définir ...
-
-    }// End of func buttonTopRightTouched
-
-    @IBAction func buttonSubRightTouched(_ sender: Any) {
-        // actions déclenchées par l'appui sur ce bouton : A définir ...
-
-    }// End of func buttonSubRightTouched
-
-    @IBAction func buttonSubLeftTouched(_ sender: Any) {
-        // actions déclenchées par l'appui sur ce bouton : A définir ...
-
-    }// End of func buttonSubLeftTouched
-
-
-
+    func insertSelectedImageInButton(_ image: UIImage) {
+        touchedButton.setImage(image, for: UIControl.State.normal)
+    }
 
 }// End of class ViewController
 
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    /// This function implements 2 protocols
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])  {
+        guard let selectedImage = info[.editedImage] as? UIImage else { return }
+        insertSelectedImageInButton(selectedImage)
+        dismiss(animated: true)
+    }
+
+
+} // End of extension ViewController

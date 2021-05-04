@@ -30,15 +30,15 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Combined Shape"/>
                                                         <connections>
-                                                            <action selector="buttonTopLeftTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8EN-KD-UQ9"/>
+                                                            <action selector="imageButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8uD-PJ-Yrw"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXw-gF-ckP" userLabel="ButtonTopRight">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXw-gF-ckP" userLabel="ButtonTopRight">
                                                         <rect key="frame" x="155" y="0.0" width="139" height="139"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Combined Shape"/>
                                                         <connections>
-                                                            <action selector="buttonTopRightTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fUR-yi-Wj5"/>
+                                                            <action selector="imageButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cxS-p9-q2J"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -46,20 +46,20 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="HxS-P6-CrP" userLabel="Bottom Sub Stack View">
                                                 <rect key="frame" x="0.0" y="155" width="294" height="139"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYg-3y-Pp8" userLabel="ButtonSubLeft">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYg-3y-Pp8" userLabel="ButtonSubLeft">
                                                         <rect key="frame" x="0.0" y="0.0" width="139" height="139"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Combined Shape"/>
                                                         <connections>
-                                                            <action selector="buttonSubLeftTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b0l-pH-b5B"/>
+                                                            <action selector="imageButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pHW-DG-8rc"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7R4-vw-Zrf" userLabel="ButtonSubRight">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7R4-vw-Zrf" userLabel="ButtonSubRight">
                                                         <rect key="frame" x="155" y="0.0" width="139" height="139"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Combined Shape"/>
                                                         <connections>
-                                                            <action selector="buttonSubRightTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hVs-Ua-cNG"/>
+                                                            <action selector="imageButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OLv-zi-Hry"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -104,34 +104,34 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="A77-1L-vpx" userLabel="Layout Stack View">
                                 <rect key="frame" x="42" y="595" width="306" height="205"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9M-o7-Wc3" userLabel="ButtonLayout1">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9M-o7-Wc3" userLabel="ButtonLayout1">
                                         <rect key="frame" x="0.0" y="54.999999999999993" width="95.333333333333329" height="95.333333333333314"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="k9M-o7-Wc3" secondAttribute="height" multiplier="1:1" id="qf1-q1-51F"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout 1"/>
                                         <connections>
-                                            <action selector="layout1ButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hkV-OD-vxd"/>
+                                            <action selector="layoutTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NJW-N8-IoR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6A-Hq-AcO" userLabel="ButtonLayout2">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6A-Hq-AcO" userLabel="ButtonLayout2">
                                         <rect key="frame" x="105.33333333333334" y="54.999999999999993" width="95.333333333333343" height="95.333333333333314"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="q6A-Hq-AcO" secondAttribute="height" multiplier="1:1" id="TOl-cl-GbJ"/>
                                         </constraints>
                                         <state key="normal" image="Selected" backgroundImage="Layout 2"/>
                                         <connections>
-                                            <action selector="layout2ButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GL4-kp-f8J"/>
+                                            <action selector="layoutTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8C9-zy-7uV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfP-fY-zai" userLabel="ButtonLayout3">
-                                        <rect key="frame" x="210.66666666666666" y="55" width="95.333333333333343" height="95.333333333333314"/>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfP-fY-zai" userLabel="ButtonLayout3">
+                                        <rect key="frame" x="210.66666666666666" y="54.999999999999993" width="95.333333333333343" height="95.333333333333314"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="nfP-fY-zai" secondAttribute="height" multiplier="1:1" id="tng-Ff-VW1"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout 3"/>
                                         <connections>
-                                            <action selector="layout3ButtonTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vah-c1-Pbd"/>
+                                            <action selector="layoutTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D78-yj-Iv2"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -215,6 +215,17 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="655-yw-WaD">
+                                <rect key="frame" x="182.66666666666666" y="588" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="655-yw-WaD" secondAttribute="height" multiplier="1:1" id="9Dw-9y-75I"/>
+                                    <constraint firstAttribute="width" constant="25" id="fhl-8o-RHA"/>
+                                </constraints>
+                                <state key="normal" image="icons8-synchronize-filled (1)"/>
+                                <connections>
+                                    <action selector="switchColorView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bEh-Gz-Cs8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.71764707569999997" green="0.84313726430000002" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -247,6 +258,7 @@
                             </constraint>
                             <constraint firstItem="A77-1L-vpx" firstAttribute="bottom" secondItem="Kjq-72-Zdc" secondAttribute="bottom" id="dgU-1T-M0g"/>
                             <constraint firstItem="Kjq-72-Zdc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eyp-Yp-SBa"/>
+                            <constraint firstItem="655-yw-WaD" firstAttribute="top" secondItem="Kjq-72-Zdc" secondAttribute="bottom" constant="3" id="h9y-Lj-naE"/>
                             <constraint firstItem="Kjq-72-Zdc" firstAttribute="top" secondItem="VZF-YX-aEC" secondAttribute="bottom" constant="16" id="hKZ-bK-Baw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kjq-72-Zdc" secondAttribute="bottom" constant="20" id="kmK-XG-NXT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kjq-72-Zdc" secondAttribute="bottom" constant="32" id="le3-7d-Yvb"/>
@@ -255,6 +267,7 @@
                             <constraint firstAttribute="bottom" secondItem="Kjq-72-Zdc" secondAttribute="bottom" constant="50" id="vMb-uh-EUP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kjq-72-Zdc" secondAttribute="trailing" constant="32" id="vlg-kR-GjY"/>
                             <constraint firstItem="Kjq-72-Zdc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="wcA-42-7tG"/>
+                            <constraint firstItem="655-yw-WaD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wiK-BE-JGH"/>
                             <constraint firstItem="Kjq-72-Zdc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wtn-fa-e5e"/>
                             <constraint firstItem="Kjq-72-Zdc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="xWc-7L-9vX"/>
                             <constraint firstItem="A77-1L-vpx" firstAttribute="leading" secondItem="Kjq-72-Zdc" secondAttribute="trailing" constant="10" id="xWq-e8-QUU"/>
@@ -327,16 +340,16 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="layout1Button" destination="k9M-o7-Wc3" id="iNa-bQ-pJs"/>
-                        <outlet property="layout2Button" destination="q6A-Hq-AcO" id="Vs7-oj-JQu"/>
-                        <outlet property="layout3Button" destination="nfP-fY-zai" id="UNB-td-T7p"/>
-                        <outlet property="layoutStackView" destination="A77-1L-vpx" id="c9H-QP-tIz"/>
                         <outlet property="photoView" destination="Kjq-72-Zdc" id="Ixm-ZY-f5s"/>
-                        <outlet property="subLeftButton" destination="HYg-3y-Pp8" id="DCh-n2-S3I"/>
-                        <outlet property="subRightButton" destination="7R4-vw-Zrf" id="iVY-6r-MR0"/>
                         <outlet property="swipeView" destination="VZF-YX-aEC" id="I8N-Vy-W7s"/>
-                        <outlet property="topLeftButton" destination="APi-Zl-pV3" id="BOj-SA-AL0"/>
-                        <outlet property="topRightButton" destination="CXw-gF-ckP" id="sds-6x-7e9"/>
+                        <outlet property="switchButton" destination="655-yw-WaD" id="HoS-7P-oVt"/>
+                        <outletCollection property="layoutButtons" destination="k9M-o7-Wc3" collectionClass="NSMutableArray" id="7Yi-Go-k0a"/>
+                        <outletCollection property="layoutButtons" destination="q6A-Hq-AcO" collectionClass="NSMutableArray" id="eEn-tU-H1d"/>
+                        <outletCollection property="layoutButtons" destination="nfP-fY-zai" collectionClass="NSMutableArray" id="A8a-LE-gI1"/>
+                        <outletCollection property="imageButton" destination="APi-Zl-pV3" collectionClass="NSMutableArray" id="2Ja-Hj-ya1"/>
+                        <outletCollection property="imageButton" destination="CXw-gF-ckP" collectionClass="NSMutableArray" id="EV7-aY-Nqf"/>
+                        <outletCollection property="imageButton" destination="7R4-vw-Zrf" collectionClass="NSMutableArray" id="SeE-xv-TpC"/>
+                        <outletCollection property="imageButton" destination="HYg-3y-Pp8" collectionClass="NSMutableArray" id="1dM-qZ-ApG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -352,5 +365,6 @@
         <image name="Layout 2" width="26.666666030883789" height="26.666666030883789"/>
         <image name="Layout 3" width="26.666666030883789" height="26.666666030883789"/>
         <image name="Selected" width="26.666666030883789" height="26.666666030883789"/>
+        <image name="icons8-synchronize-filled (1)" width="40" height="40"/>
     </resources>
 </document>
