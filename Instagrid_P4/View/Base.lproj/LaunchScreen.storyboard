@@ -6,11 +6,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="ThirstySoftRegular.otf">
-            <string>ThirstySoftRegular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -20,26 +15,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Instagrid" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d4W-14-Zf9">
-                                <rect key="frame" x="78.5" y="406" width="257" height="84"/>
-                                <color key="textColor" red="0.97023809520000004" green="0.96149272210000003" blue="0.93587903910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="65"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="Lsv-9t-wlu">
-                                <rect key="frame" x="177" y="540" width="60" height="60"/>
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="ajq-ak-CrQ"/>
                                     <constraint firstAttribute="width" secondItem="Lsv-9t-wlu" secondAttribute="height" multiplier="1:1" id="gLj-KP-S5A"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="Exe-sj-Ej3">
+                                <rect key="frame" x="126" y="280" width="162" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Exe-sj-Ej3" secondAttribute="height" multiplier="42:13" id="Ij6-mn-Tzp"/>
+                                    <constraint firstAttribute="height" constant="50" id="Tlx-fA-eCQ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.71764707569999997" green="0.84313726430000002" blue="0.89803922179999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Lsv-9t-wlu" firstAttribute="top" secondItem="d4W-14-Zf9" secondAttribute="bottom" constant="50" id="74e-J9-w4Q"/>
-                            <constraint firstItem="d4W-14-Zf9" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="X0r-At-0zt"/>
+                            <constraint firstItem="Lsv-9t-wlu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FUV-et-8tc"/>
                             <constraint firstItem="Lsv-9t-wlu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="cvf-4P-XQm"/>
-                            <constraint firstItem="d4W-14-Zf9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rrz-Ll-gDB"/>
+                            <constraint firstItem="Lsv-9t-wlu" firstAttribute="top" secondItem="Exe-sj-Ej3" secondAttribute="bottom" constant="68" id="x9h-AR-85b"/>
+                            <constraint firstItem="Exe-sj-Ej3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yng-X6-rbD"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -50,5 +47,6 @@
     </scenes>
     <resources>
         <image name="Icon" width="60" height="60"/>
+        <image name="Instagrid" width="41.5" height="13"/>
     </resources>
 </document>

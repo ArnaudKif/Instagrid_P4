@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		963616F826428C6C000C0219 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963616F726428C6C000C0219 /* UIImage.swift */; };
+		963616FA26429342000C0219 /* ViewControlerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963616F926429342000C0219 /* ViewControlerExtension.swift */; };
 		966F50FC2636FAB400EDB9AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F50FB2636FAB400EDB9AB /* AppDelegate.swift */; };
 		966F50FE2636FAB400EDB9AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F50FD2636FAB400EDB9AB /* SceneDelegate.swift */; };
 		966F51002636FAB400EDB9AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F50FF2636FAB400EDB9AB /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		963616F726428C6C000C0219 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		963616F926429342000C0219 /* ViewControlerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControlerExtension.swift; sourceTree = "<group>"; };
 		963C349F2637EB97001698B3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		966F50F82636FAB400EDB9AB /* Instagrid_P4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid_P4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966F50FB2636FAB400EDB9AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		963616F626428C35000C0219 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				963616F726428C6C000C0219 /* UIImage.swift */,
+				963616F926429342000C0219 /* ViewControlerExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		965428B32639904900BA0462 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +99,7 @@
 		966F50FA2636FAB400EDB9AB /* Instagrid_P4 */ = {
 			isa = PBXGroup;
 			children = (
+				963616F626428C35000C0219 /* Extension */,
 				965428B42639906B00BA0462 /* View */,
 				965428B52639909600BA0462 /* Controller */,
 				966F50FB2636FAB400EDB9AB /* AppDelegate.swift */,
@@ -169,7 +183,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				963616FA26429342000C0219 /* ViewControlerExtension.swift in Sources */,
 				966F51002636FAB400EDB9AB /* ViewController.swift in Sources */,
+				963616F826428C6C000C0219 /* UIImage.swift in Sources */,
 				966F50FC2636FAB400EDB9AB /* AppDelegate.swift in Sources */,
 				966F50FE2636FAB400EDB9AB /* SceneDelegate.swift in Sources */,
 			);

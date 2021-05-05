@@ -10,41 +10,91 @@ import UIKit
 class ViewController: UIViewController {
 
     // les IBOutlet permettront au contrôleur de changer des éléments de la vue
-    @IBOutlet weak var swipeView: UIStackView! // pour le faire bouger quand on va swiper pour partager
-
+    @IBOutlet weak var swipeView: UIStackView!
+    @IBOutlet weak var swipeImageView: UIStackView!
     @IBOutlet var layoutButtons: [UIButton]!
-
     @IBOutlet var imageButton: [UIButton]!
-
     @IBOutlet weak var switchButton: UIButton!
-    
-    @IBOutlet weak var photoView: UIView!       // Va bouger lors du swipe de partage(animation) ? Changement de couleur de fond... pour améliorations éventuelles
-    var touchedButton: UIButton!
-    var myImageView: UIImage!
+    @IBOutlet weak var photoView: UIView!
+
+    private var touchedButton: UIButton!
     private let myImagePickerController = UIImagePickerController()
-    var indexOfColor = 0
+    private var indexOfColor = 0
+    private var firstStart = true
+    private var swipeGesture: UISwipeGestureRecognizer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         buttonIsPresent(button: imageButton[1]) // valide la disposition de départ
         buttonIsNotPresent(button: imageButton[3])
+        swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction))
+        guard let swipeGesture = swipeGesture else { return }
+        swipeView.addGestureRecognizer(swipeGesture)
+        swipeImageView.addGestureRecognizer(swipeGesture)
+    } // End of override func viewDidLoad
 
-    }// End of override func viewDidLoad
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if firstStart {
+            firstStart = false
+            detectOrientation()
+        }
+    } // End of ViewDidLayoutSubviews
+
+/// à chaque fois que le téléphone est tourné, on change de sens du swipe
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        detectOrientation()
+    } // End of viewWillTransition
+
 
     @IBAction func switchColorView(_ sender: Any) {
-        let colors: [UIColor] = [#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1),#colorLiteral(red: 0.5910229683, green: 0.3601167798, blue: 0, alpha: 1),#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1),#colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1),#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1),#colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1),#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1),#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),#colorLiteral(red: 0.1315900385, green: 0.3851100206, blue: 0.567650497, alpha: 1)]
+        let colors: [UIColor] = [#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),#colorLiteral(red: 0.7853941321, green: 0.9267250896, blue: 0.6275908351, alpha: 1),#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1),#colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1),#colorLiteral(red: 0.2523820337, green: 0.01414077414, blue: 0.8124809939, alpha: 1),#colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1),#colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1),#colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1),#colorLiteral(red: 0, green: 0.4076067805, blue: 0.6132292151, alpha: 1)]
         photoView.backgroundColor = colors[indexOfColor]
         indexOfColor += 1
         print(indexOfColor)
         if indexOfColor == 9 {
             indexOfColor = 0
         }
-    }
+    }// End of switchColorView
+
 
     // -------- IBAction du swipe to share ---------
 
+/// défini la direction du swipe en fonction de l'orientation de l'écran
+    fileprivate func detectOrientation() {
+        if UIDevice.current.orientation.isLandscape {
+            swipeGesture?.direction = .left
+        } else {
+            swipeGesture?.direction = .up
+        }
+    } // End of detectOrientation
 
+    @objc private func swipeAction() {
+        if swipeGesture?.direction == .up {
+            UIView.animate(withDuration: 0.5, animations: { self.photoView.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)}, completion: {_ in
+                self.share()
+            })
+            } else {
+                UIView.animate(withDuration: 0.5, animations: { self.photoView.transform = CGAffineTransform(translationX: -self.view.frame.width, y: 0)}, completion: {_ in
+                    self.share()
+                })
+
+            }
+    } // End of swipeAction
+
+    func share() {
+
+        let image = photoView.ExtensionasImage()
+//        guard let image = photoView.ExtensionasImage() else { return }
+        let activityViewControler = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        present(activityViewControler, animated: true)
+        activityViewControler.completionWithItemsHandler = { _, _, _, _ in
+            UIView.animate(withDuration: 0.5) {
+                self.photoView.transform = .identity
+            }
+        }
+    } // End of share
+ 
 
     // -------- IBAction des boutons de changement de disposition -------
 
@@ -106,17 +156,5 @@ class ViewController: UIViewController {
     func insertSelectedImageInButton(_ image: UIImage) {
         touchedButton.setImage(image, for: UIControl.State.normal)
     }
-
 }// End of class ViewController
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    /// This function implements 2 protocols
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])  {
-        guard let selectedImage = info[.editedImage] as? UIImage else { return }
-        insertSelectedImageInButton(selectedImage)
-        dismiss(animated: true)
-    }
-
-
-} // End of extension ViewController
