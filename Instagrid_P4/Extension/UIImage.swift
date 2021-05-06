@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 
 extension UIView {
+
+    /// transforms an object into a UIImage
     func ExtensionasImage() -> UIImage {
         if #available(iOS 10.0, *) {
             let renderer = UIGraphicsImageRenderer(bounds: bounds)
@@ -22,5 +24,5 @@ extension UIView {
             UIGraphicsEndImageContext()
             return UIImage(cgImage: image!.cgImage!)
         }
-    }
+    } // End of ExtensionasImage
 }

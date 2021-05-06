@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		963616F826428C6C000C0219 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963616F726428C6C000C0219 /* UIImage.swift */; };
-		963616FA26429342000C0219 /* ViewControlerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963616F926429342000C0219 /* ViewControlerExtension.swift */; };
 		966F50FC2636FAB400EDB9AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F50FB2636FAB400EDB9AB /* AppDelegate.swift */; };
 		966F50FE2636FAB400EDB9AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F50FD2636FAB400EDB9AB /* SceneDelegate.swift */; };
 		966F51002636FAB400EDB9AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966F50FF2636FAB400EDB9AB /* ViewController.swift */; };
@@ -21,8 +20,6 @@
 
 /* Begin PBXFileReference section */
 		963616F726428C6C000C0219 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
-		963616F926429342000C0219 /* ViewControlerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControlerExtension.swift; sourceTree = "<group>"; };
-		963C349F2637EB97001698B3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		966F50F82636FAB400EDB9AB /* Instagrid_P4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid_P4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		966F50FB2636FAB400EDB9AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		966F50FD2636FAB400EDB9AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +29,7 @@
 		966F51072636FAB600EDB9AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		966F51102636FE4400EDB9AB /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 		966F51132636FE4E00EDB9AB /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
+		96E1066C2643E08B00CB243E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Instagrid_P4/Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +47,6 @@
 			isa = PBXGroup;
 			children = (
 				963616F726428C6C000C0219 /* UIImage.swift */,
-				963616F926429342000C0219 /* ViewControlerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -99,16 +96,32 @@
 		966F50FA2636FAB400EDB9AB /* Instagrid_P4 */ = {
 			isa = PBXGroup;
 			children = (
-				963616F626428C35000C0219 /* Extension */,
-				965428B42639906B00BA0462 /* View */,
+				96E106692643D48200CB243E /* Model */,
 				965428B52639909600BA0462 /* Controller */,
-				966F50FB2636FAB400EDB9AB /* AppDelegate.swift */,
-				966F50FD2636FAB400EDB9AB /* SceneDelegate.swift */,
-				963C349F2637EB97001698B3 /* Info.plist */,
-				965428B32639904900BA0462 /* Font */,
-				966F51042636FAB600EDB9AB /* Assets.xcassets */,
+				965428B42639906B00BA0462 /* View */,
+				96E106682643D41700CB243E /* Supporting Files */,
+				963616F626428C35000C0219 /* Extension */,
+				96E1066C2643E08B00CB243E /* Info.plist */,
 			);
 			path = Instagrid_P4;
+			sourceTree = "<group>";
+		};
+		96E106682643D41700CB243E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				965428B32639904900BA0462 /* Font */,
+				966F50FB2636FAB400EDB9AB /* AppDelegate.swift */,
+				966F50FD2636FAB400EDB9AB /* SceneDelegate.swift */,
+				966F51042636FAB600EDB9AB /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96E106692643D48200CB243E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,7 +196,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				963616FA26429342000C0219 /* ViewControlerExtension.swift in Sources */,
 				966F51002636FAB400EDB9AB /* ViewController.swift in Sources */,
 				963616F826428C6C000C0219 /* UIImage.swift in Sources */,
 				966F50FC2636FAB400EDB9AB /* AppDelegate.swift in Sources */,

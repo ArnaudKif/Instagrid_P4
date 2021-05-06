@@ -218,7 +218,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="655-yw-WaD">
                                 <rect key="frame" x="194.5" y="626" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="655-yw-WaD" secondAttribute="height" multiplier="1:1" id="9Dw-9y-75I"/>
+                                    <constraint firstAttribute="height" constant="25" id="6ZQ-Hy-cxz"/>
                                     <constraint firstAttribute="width" constant="25" id="fhl-8o-RHA"/>
                                 </constraints>
                                 <state key="normal" image="icons8-synchronize-filled (1)"/>
@@ -258,20 +258,23 @@
                             </constraint>
                             <constraint firstItem="A77-1L-vpx" firstAttribute="bottom" secondItem="Kjq-72-Zdc" secondAttribute="bottom" id="dgU-1T-M0g"/>
                             <constraint firstItem="Kjq-72-Zdc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eyp-Yp-SBa"/>
-                            <constraint firstItem="655-yw-WaD" firstAttribute="top" secondItem="Kjq-72-Zdc" secondAttribute="bottom" constant="3" id="h9y-Lj-naE"/>
+                            <constraint firstItem="655-yw-WaD" firstAttribute="top" secondItem="Kjq-72-Zdc" secondAttribute="bottom" constant="3" id="h9y-Lj-naE">
+                                <variation key="heightClass=compact" constant="-25"/>
+                            </constraint>
                             <constraint firstItem="Kjq-72-Zdc" firstAttribute="top" secondItem="VZF-YX-aEC" secondAttribute="bottom" constant="16" id="hKZ-bK-Baw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kjq-72-Zdc" secondAttribute="bottom" constant="20" id="kmK-XG-NXT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kjq-72-Zdc" secondAttribute="bottom" constant="32" id="le3-7d-Yvb"/>
                             <constraint firstItem="A77-1L-vpx" firstAttribute="bottom" secondItem="Kjq-72-Zdc" secondAttribute="bottom" id="p6b-D5-oDU"/>
                             <constraint firstItem="NxO-LS-Lus" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pXX-0J-4fu"/>
+                            <constraint firstItem="655-yw-WaD" firstAttribute="centerX" secondItem="sNz-5U-WhT" secondAttribute="centerX" id="pfq-la-4bI"/>
                             <constraint firstAttribute="bottom" secondItem="Kjq-72-Zdc" secondAttribute="bottom" constant="50" id="vMb-uh-EUP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kjq-72-Zdc" secondAttribute="trailing" constant="32" id="vlg-kR-GjY"/>
                             <constraint firstItem="Kjq-72-Zdc" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="wcA-42-7tG"/>
-                            <constraint firstItem="655-yw-WaD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wiK-BE-JGH"/>
                             <constraint firstItem="Kjq-72-Zdc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wtn-fa-e5e"/>
                             <constraint firstItem="Kjq-72-Zdc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="xWc-7L-9vX"/>
                             <constraint firstItem="A77-1L-vpx" firstAttribute="leading" secondItem="Kjq-72-Zdc" secondAttribute="trailing" constant="10" id="xWq-e8-QUU"/>
                             <constraint firstItem="Kjq-72-Zdc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="y1G-qt-X2l"/>
+                            <constraint firstItem="655-yw-WaD" firstAttribute="centerX" secondItem="VZF-YX-aEC" secondAttribute="centerX" id="yQg-z3-ZVG"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -297,6 +300,7 @@
                                 <exclude reference="dgU-1T-M0g"/>
                                 <exclude reference="p6b-D5-oDU"/>
                                 <exclude reference="xWq-e8-QUU"/>
+                                <exclude reference="yQg-z3-ZVG"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -336,6 +340,7 @@
                                 <include reference="dgU-1T-M0g"/>
                                 <exclude reference="p6b-D5-oDU"/>
                                 <include reference="xWq-e8-QUU"/>
+                                <include reference="yQg-z3-ZVG"/>
                             </mask>
                         </variation>
                     </view>
