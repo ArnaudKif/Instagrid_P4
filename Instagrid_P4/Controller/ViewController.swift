@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     // MARK: - @IBOutlets
 
-    @IBOutlet weak var swipeView: UIStackView!
+    @IBOutlet weak var swipeView: UIStackView! // Sert ou pas ?
     @IBOutlet weak var swipeImageView: UIStackView!
     @IBOutlet var layoutButtons: [UIButton]!
     @IBOutlet var imageButton: [UIButton]!
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     private let myImagePickerController = UIImagePickerController()
     private var indexOfColor = 0
     private var firstStart = true
-    private var swipeGesture: UISwipeGestureRecognizer?
+    private var mySwipeGesture: UISwipeGestureRecognizer?
 
     // MARK: - override func viewDidLoad, viewDidLayoutSubviews & viewWillTransition
 
@@ -32,8 +32,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         buttonIsPresent(button: imageButton[1])
         buttonIsNotPresent(button: imageButton[3])
-        swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction))
-        guard let swipeGesture = swipeGesture else { return }
+        mySwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction))
+        guard let swipeGesture = mySwipeGesture else { return }
         swipeView.addGestureRecognizer(swipeGesture)
         swipeImageView.addGestureRecognizer(swipeGesture)
     } // End of override func viewDidLoad
@@ -71,15 +71,15 @@ chooseColorBackground()
 /// set the swipe direction according to the screen orientation
     private func detectOrientation() {
         if UIDevice.current.orientation.isLandscape {
-            swipeGesture?.direction = .left
+            mySwipeGesture?.direction = .left
         } else {
-            swipeGesture?.direction = .up
+            mySwipeGesture?.direction = .up
         }
     } // End of detectOrientation
 
     /// manages the animation during the swipe and calls the share function
     @objc private func swipeAction() {
-        if swipeGesture?.direction == .up {
+        if mySwipeGesture?.direction == .up {
             UIView.animate(withDuration: 0.5, animations: { self.photoView.transform = CGAffineTransform(translationX: 0, y: -self.view.frame.height)}, completion: {_ in
                 self.share()
             })

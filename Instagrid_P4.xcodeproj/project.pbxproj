@@ -97,10 +97,10 @@
 			isa = PBXGroup;
 			children = (
 				96E106692643D48200CB243E /* Model */,
-				965428B52639909600BA0462 /* Controller */,
 				965428B42639906B00BA0462 /* View */,
-				96E106682643D41700CB243E /* Supporting Files */,
+				965428B52639909600BA0462 /* Controller */,
 				963616F626428C35000C0219 /* Extension */,
+				96E106682643D41700CB243E /* Supporting Files */,
 				96E1066C2643E08B00CB243E /* Info.plist */,
 			);
 			path = Instagrid_P4;
