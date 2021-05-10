@@ -11,7 +11,7 @@ import UIKit
 extension UIView {
 
     /// transforms an object into a UIImage
-    func ExtensionasImage() -> UIImage {
+    func extensionAsImage() -> UIImage {
         if #available(iOS 10.0, *) {
             let renderer = UIGraphicsImageRenderer(bounds: bounds)
             return renderer.image { rendererContext in
@@ -19,10 +19,11 @@ extension UIView {
             }
         } else {
             UIGraphicsBeginImageContext(self.frame.size)
-            self.layer.render(in:UIGraphicsGetCurrentContext()!)
+            self.layer.render(in: UIGraphicsGetCurrentContext()!)
             let image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             return UIImage(cgImage: image!.cgImage!)
         }
-    } // End of ExtensionasImage
-}
+    } // End of extensionAsImage()
+
+}// End of extension UIView
